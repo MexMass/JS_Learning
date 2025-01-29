@@ -15,9 +15,15 @@ export default class partyButton {
 
         this.#button.addEventListener("click", () => {
             this.#toggle = !this.#toggle;
-            this.#intervalID = this.#toggle 
-            ? setInterval(this.#changeBackground,500) 
-            : clearInterval(this.#intervalID), document.body.style.backgroundColor = "rgb(255,255,255)";
+
+            if(this.#toggle) {
+                this.#intervalID = setInterval(() => this.#changeBackground(), 500);
+                this.#button.innerText = 'STOP PARTY';
+            } else {
+                clearInterval(this.#intervalID);
+                document.body.style.backgroundColor = "rgb(255,255,255)";
+                this.#button.innerText = 'PARTY';
+            }
         })
     }
 
