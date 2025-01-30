@@ -1,0 +1,25 @@
+import "./catFactsButton.css";
+import axios from 'axios';
+
+export default class catButton {
+    buttonContainer = document.createElement("div");
+    #text = document.createElement("div");
+    #button = document.createElement("button");
+
+    constructor() {
+        this.buttonContainer.appendChild(this.#button);
+        this.buttonContainer.appendChild(this.#text);
+
+        this.buttonContainer.classList.add('catButton')
+
+        this.#button.innerText = 'Get Cat Fact';
+
+        this.#button.addEventListener("click", () => {
+
+            axios.get('https://catfact.ninja/fact')
+            .then(resp => this.#text.innerText = resp.data.fact)
+            .catch(err => this.#text.innerText = err.data.fact);
+
+        })
+    }
+}

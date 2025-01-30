@@ -1,0 +1,20 @@
+.catButton {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #ccc;
+    width: 250px;
+    height: 200px;
+    align-items: center;
+    background-color: #f0f0f0;
+    margin: 10px;
+
+}
+.catButton div {
+    margin: 2px;
+}
+
+.catButton button {
+    margin: 5px;
+    padding: 5px;
+    width: 100px;
+}
