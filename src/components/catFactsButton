@@ -18,7 +18,7 @@ export default class catButton {
 
             axios.get('https://catfact.ninja/fact')
             .then(resp => this.#text.innerText = resp.data.fact)
-            .catch(err => this.#text.innerText = err.data.fact);
+            .catch(err => this.#text.innerText = err.data);
 
         })
     }
